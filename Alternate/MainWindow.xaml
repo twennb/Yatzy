@@ -1,0 +1,126 @@
+﻿<Window x:Class="Alternate.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Alternate"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+            <ColumnDefinition Width="Auto"/>
+        </Grid.ColumnDefinitions>
+
+        <!-- Vänster kolumn, målen -->
+        <Label Grid.Row="0" Grid.Column="0"
+           BorderBrush="Black" BorderThickness="1.5"
+           Content="Namn:"/>
+        <Label Grid.Row="1" Grid.Column="0"
+           BorderBrush="DarkGray" BorderThickness="1"
+           Content="Ettor"/>
+        <Label Grid.Row="2" Grid.Column="0"
+           BorderBrush="DarkGray" BorderThickness="1"
+           Content="Tvåor"/>
+        <Label Grid.Row="3" Grid.Column="0"
+           BorderBrush="DarkGray" BorderThickness="1"
+           Content="Treor"/>
+        <Label Grid.Row="4" Grid.Column="0"
+           BorderBrush="DarkGray" BorderThickness="1"
+           Content="Fyror"/>
+        <Label Grid.Row="5" Grid.Column="0"
+           BorderBrush="DarkGray" BorderThickness="1"
+           Content="Femmor"/>
+        <Label Grid.Row="6" Grid.Column="0"
+           BorderBrush="DarkGray" BorderThickness="1"
+           Content="Sexor"/>
+        <Button Grid.Row="7" Grid.Column="0"
+           BorderBrush="DarkGray" BorderThickness="1.5"
+           Content="Summa"
+           Click="SummaButton_Click"/>
+        <Button Grid.Row="8" Grid.Column="0"
+           BorderBrush="Black" BorderThickness="1.5"
+           Content="Bonus"
+           Click="BonusButton_Click"/>
+
+
+        <!-- Spelares namn -->
+        <TextBox Grid.Row="0" Grid.Column="1" MinWidth="45"
+             BorderBrush="Black" BorderThickness="1.5"/>
+        <TextBox Grid.Row="0" Grid.Column="2" MinWidth="45"
+             BorderBrush="Black" BorderThickness="1.5"/>
+        <TextBox Grid.Row="0" Grid.Column="3" MinWidth="45"
+             BorderBrush="Black" BorderThickness="1.5"/>
+        <TextBox Grid.Row="0" Grid.Column="4" MinWidth="45"
+             BorderBrush="Black" BorderThickness="1.5"/>
+
+        <!-- Spelare 1 -->
+        <TextBox Grid.Row="1" Grid.Column="1" x:Name="playerOneOnes"/>
+        <TextBox Grid.Row="2" Grid.Column="1" x:Name="playerOneTwos"/>
+        <TextBox Grid.Row="3" Grid.Column="1" x:Name="playerOneThrees"/>
+        <TextBox Grid.Row="4" Grid.Column="1" x:Name="playerOneFours"/>
+        <TextBox Grid.Row="5" Grid.Column="1" x:Name="playerOneFives"/>
+        <TextBox Grid.Row="6" Grid.Column="1" x:Name="playerOneSixes"/>
+        <Label Grid.Row="7" Grid.Column="1" x:Name="playerOneSum"
+           BorderBrush="DarkGray" BorderThickness="1"/>
+        <Label Grid.Row="8" Grid.Column="1" x:Name="playerOneBonus"
+           BorderBrush="DarkGray" BorderThickness="1"/>
+        <!-- Spelare 2 -->
+        <TextBox Grid.Row="1" Grid.Column="2" x:Name="playerTwoOnes"/>
+        <TextBox Grid.Row="2" Grid.Column="2" x:Name="playerTwoTwos"/>
+        <TextBox Grid.Row="3" Grid.Column="2" x:Name="playerTwoThrees"/>
+        <TextBox Grid.Row="4" Grid.Column="2" x:Name="playerTwoFours"/>
+        <TextBox Grid.Row="5" Grid.Column="2" x:Name="playerTwoFives"/>
+        <TextBox Grid.Row="6" Grid.Column="2" x:Name="playerTwoSixes"/>
+        <Label Grid.Row="7" Grid.Column="2" x:Name="playerTwoSum"
+           BorderBrush="DarkGray" BorderThickness="1"/>
+        <Label Grid.Row="8" Grid.Column="2" x:Name="playerTwoBonus"
+           BorderBrush="DarkGray" BorderThickness="1"/>
+        <!-- Spelare 3 -->
+        <TextBox Grid.Row="1" Grid.Column="3" x:Name="playerThreeOnes"/>
+        <TextBox Grid.Row="2" Grid.Column="3" x:Name="playerThreeTwos"/>
+        <TextBox Grid.Row="3" Grid.Column="3" x:Name="playerThreeThrees"/>
+        <TextBox Grid.Row="4" Grid.Column="3" x:Name="playerThreeFours"/>
+        <TextBox Grid.Row="5" Grid.Column="3" x:Name="playerThreeFives"/>
+        <TextBox Grid.Row="6" Grid.Column="3" x:Name="playerThreeSixes"/>
+        <Label Grid.Row="7" Grid.Column="3" x:Name="playerThreeSum" 
+           BorderBrush="DarkGray" BorderThickness="1"/>
+        <Label Grid.Row="8" Grid.Column="3" x:Name="playerThreeBonus"
+           BorderBrush="DarkGray" BorderThickness="1"/>
+        <!-- Spelare 4 -->
+        <TextBox Grid.Row="1" Grid.Column="4" x:Name="playerFourOnes"/>
+        <TextBox Grid.Row="2" Grid.Column="4" x:Name="playerFourTwos"/>
+        <TextBox Grid.Row="3" Grid.Column="4" x:Name="playerFourThrees"/>
+        <TextBox Grid.Row="4" Grid.Column="4" x:Name="playerFourFours"/>
+        <TextBox Grid.Row="5" Grid.Column="4" x:Name="playerFourFives"/>
+        <TextBox Grid.Row="6" Grid.Column="4" x:Name="playerFourSixes"/>
+        <Label Grid.Row="7" Grid.Column="4" x:Name="playerFourSum"
+           BorderBrush="DarkGray" BorderThickness="1"/>
+        <Label Grid.Row="8" Grid.Column="4" x:Name="playerFourBonus"
+           BorderBrush="DarkGray" BorderThickness="1"/>
+    </Grid>
+</Window>
