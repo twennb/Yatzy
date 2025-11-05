@@ -17,43 +17,48 @@ namespace Alternate
     public partial class MainWindow : Window
     {
 
-        private int _playerOneSum;
-        private int _playerTwoSum;
-        private int _playerThreeSum;
-        private int _playerFourSum;
+        // variables to hold each player's sums
+        private int _playerOneSum = 0;
+        private int _playerTwoSum = 0;
+        private int _playerThreeSum = 0;
+        private int _playerFourSum = 0;
+        // define the threshold for getting bonus points and how many
         private int _bonusThreshold = 63;
+        private int _bonusPoints = 50;
 
         private int previousSum;
+
         public MainWindow()
         {
             InitializeComponent();
         }
 
-        private void PlayerSumCalc(TextBox sender)
+        // Define the function that is called by the textbox events
+        private void PlayerSumCalc(TextBox sender) // this function takes in a TextBox object, the box that called it
         {
-            if (sender.Text != "")
+            if (sender.Text != "") // make sure the sender box isn't empty, if it is do nothing
             {
-                if (sender.Name.Contains("First"))
+                if (sender.Name.Contains("First")) // check if player 1 owns the box
                 {
-                    if (playerOneSum.Content == null)
+                    if (playerOneSum.Content == null) // content is null until the sum is updated for the first time
                     {
-                        playerOneSum.Content = _playerOneSum + int.Parse(sender.Text);
-                        sender.Focusable = false;
+                        playerOneSum.Content = _playerOneSum + int.Parse(sender.Text); // add the current sum to the value from the box
+                        sender.Focusable = false; // make the box unfocusable so the value cannot be changed
 
-                        if (int.Parse(playerOneSum.Content.ToString()) >= _bonusThreshold)
+                        if (int.Parse(playerOneSum.Content.ToString()) >= _bonusThreshold) // check if bonus is met
                         {
-                            playerOneBonus.Content = 50;
+                            playerOneBonus.Content = _bonusPoints; // show points for bonus
                         }
                     }
-                    else
-                    {
-                        previousSum = int.Parse(playerOneSum.Content.ToString());
-                        playerOneSum.Content = previousSum + int.Parse(sender.Text);
-                        sender.Focusable = false;
+                    else // this happens when playerOneSum.Content is not null, meaning every time after the first box
+                    {   
+                        previousSum = int.Parse(playerOneSum.Content.ToString()); // stores the current sum before adding the new
+                        playerOneSum.Content = previousSum + int.Parse(sender.Text); // new sum is previous sum + new box's value
+                        sender.Focusable = false; // make non interactible 
 
-                        if (int.Parse(playerOneSum.Content.ToString()) >= _bonusThreshold)
+                        if (int.Parse(playerOneSum.Content.ToString()) >= _bonusThreshold) // check if bonus is met
                         {
-                            playerOneBonus.Content = 50;
+                            playerOneBonus.Content = _bonusPoints; // show bonus points
                         }
                     }
                 }
@@ -66,7 +71,7 @@ namespace Alternate
 
                         if (int.Parse(playerTwoSum.Content.ToString()) >= _bonusThreshold)
                         {
-                            playerTwoBonus.Content = 50;
+                            playerTwoBonus.Content = _bonusPoints;
                         }
                     }
                     else
@@ -77,7 +82,7 @@ namespace Alternate
 
                         if (int.Parse(playerTwoSum.Content.ToString()) >= _bonusThreshold)
                         {
-                            playerTwoBonus.Content = 50;
+                            playerTwoBonus.Content = _bonusPoints;
                         }
                     }
                 }
@@ -90,7 +95,7 @@ namespace Alternate
 
                         if (int.Parse(playerThreeSum.Content.ToString()) >= _bonusThreshold)
                         {
-                            playerThreeBonus.Content = 50;
+                            playerThreeBonus.Content = _bonusPoints;
                         }
                     }
                     else
@@ -101,7 +106,7 @@ namespace Alternate
 
                         if (int.Parse(playerThreeSum.Content.ToString()) >= _bonusThreshold)
                         {
-                            playerThreeBonus.Content = 50;
+                            playerThreeBonus.Content = _bonusPoints;
                         }
                     }
                 }
@@ -114,7 +119,7 @@ namespace Alternate
 
                         if (int.Parse(playerFourSum.Content.ToString()) >= _bonusThreshold)
                         {
-                            playerFourBonus.Content = 50;
+                            playerFourBonus.Content = _bonusPoints;
                         }
                     }
                     else
@@ -125,7 +130,7 @@ namespace Alternate
 
                         if (int.Parse(playerFourSum.Content.ToString()) >= _bonusThreshold)
                         {
-                            playerFourBonus.Content = 50;
+                            playerFourBonus.Content = _bonusPoints;
                         }
                     }
                 }
@@ -136,11 +141,11 @@ namespace Alternate
             }
         }
 
-        private void player_KeyDown(object sender, KeyEventArgs e)
+        private void player_KeyDown(object sender, KeyEventArgs e) // called when a keyboard event is registered by the box
         {
-            if (e.Key == Key.Enter)
+            if (e.Key == Key.Enter) // happens when the user presses Enter
             {
-                PlayerSumCalc(((TextBox)sender));
+                PlayerSumCalc(((TextBox)sender)); // runs the function to handle everything after user presses Enter in a box
             }
         }
     }
