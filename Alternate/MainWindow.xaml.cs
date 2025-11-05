@@ -31,16 +31,16 @@ namespace Alternate
 
         private void PlayerSumCalc(TextBox sender)
         {
-            if(sender.Name.Contains("First"))
+            if (sender.Text != "")
             {
-                if (sender.Text != "")
+                if (sender.Name.Contains("First"))
                 {
                     if (playerOneSum.Content == null)
                     {
                         playerOneSum.Content = _playerOneSum + int.Parse(sender.Text);
                         sender.Focusable = false;
 
-                        if(int.Parse(playerOneSum.Content.ToString()) >= _bonusThreshold)
+                        if (int.Parse(playerOneSum.Content.ToString()) >= _bonusThreshold)
                         {
                             playerOneBonus.Content = 50;
                         }
@@ -57,82 +57,82 @@ namespace Alternate
                         }
                     }
                 }
-            }
-            else if (sender.Name.Contains("Second"))
-            {
-                if (playerTwoSum.Content == null)
+                else if (sender.Name.Contains("Second"))
                 {
-                    playerTwoSum.Content = _playerTwoSum + int.Parse(sender.Text);
-                    sender.Focusable = false;
-
-                    if (int.Parse(playerTwoSum.Content.ToString()) >= _bonusThreshold)
+                    if (playerTwoSum.Content == null)
                     {
-                        playerTwoBonus.Content = 50;
+                        playerTwoSum.Content = _playerTwoSum + int.Parse(sender.Text);
+                        sender.Focusable = false;
+
+                        if (int.Parse(playerTwoSum.Content.ToString()) >= _bonusThreshold)
+                        {
+                            playerTwoBonus.Content = 50;
+                        }
+                    }
+                    else
+                    {
+                        previousSum = int.Parse(playerTwoSum.Content.ToString());
+                        playerTwoSum.Content = previousSum + int.Parse(sender.Text);
+                        sender.Focusable = false;
+
+                        if (int.Parse(playerTwoSum.Content.ToString()) >= _bonusThreshold)
+                        {
+                            playerTwoBonus.Content = 50;
+                        }
+                    }
+                }
+                else if (sender.Name.Contains("Third"))
+                {
+                    if (playerThreeSum.Content == null)
+                    {
+                        playerThreeSum.Content = _playerThreeSum + int.Parse(sender.Text);
+                        sender.Focusable = false;
+
+                        if (int.Parse(playerThreeSum.Content.ToString()) >= _bonusThreshold)
+                        {
+                            playerThreeBonus.Content = 50;
+                        }
+                    }
+                    else
+                    {
+                        previousSum = int.Parse(playerThreeSum.Content.ToString());
+                        playerThreeSum.Content = previousSum + int.Parse(sender.Text);
+                        sender.Focusable = false;
+
+                        if (int.Parse(playerThreeSum.Content.ToString()) >= _bonusThreshold)
+                        {
+                            playerThreeBonus.Content = 50;
+                        }
+                    }
+                }
+                else if (sender.Name.Contains("Fourth"))
+                {
+                    if (playerFourSum.Content == null)
+                    {
+                        playerFourSum.Content = _playerFourSum + int.Parse(sender.Text);
+                        sender.Focusable = false;
+
+                        if (int.Parse(playerFourSum.Content.ToString()) >= _bonusThreshold)
+                        {
+                            playerFourBonus.Content = 50;
+                        }
+                    }
+                    else
+                    {
+                        previousSum = int.Parse(playerFourSum.Content.ToString());
+                        playerFourSum.Content = previousSum + int.Parse(sender.Text);
+                        sender.Focusable = false;
+
+                        if (int.Parse(playerFourSum.Content.ToString()) >= _bonusThreshold)
+                        {
+                            playerFourBonus.Content = 50;
+                        }
                     }
                 }
                 else
                 {
-                    previousSum = int.Parse(playerTwoSum.Content.ToString());
-                    playerTwoSum.Content = previousSum + int.Parse(sender.Text);
-                    sender.Focusable = false;
-
-                    if (int.Parse(playerTwoSum.Content.ToString()) >= _bonusThreshold)
-                    {
-                        playerTwoBonus.Content = 50;
-                    }
+                    MessageBox.Show("Somethings real wrong if you see this");
                 }
-            }
-            else if (sender.Name.Contains("Third"))
-            {
-                if (playerThreeSum.Content == null)
-                {
-                    playerThreeSum.Content = _playerThreeSum + int.Parse(sender.Text);
-                    sender.Focusable = false;
-
-                    if (int.Parse(playerThreeSum.Content.ToString()) >= _bonusThreshold)
-                    {
-                        playerThreeBonus.Content = 50;
-                    }
-                }
-                else
-                {
-                    previousSum = int.Parse(playerThreeSum.Content.ToString());
-                    playerThreeSum.Content = previousSum + int.Parse(sender.Text);
-                    sender.Focusable = false;
-
-                    if (int.Parse(playerThreeSum.Content.ToString()) >= _bonusThreshold)
-                    {
-                        playerThreeBonus.Content = 50;
-                    }
-                }
-            }
-            else if (sender.Name.Contains("Fourth"))
-            {
-                if (playerFourSum.Content == null)
-                {
-                    playerFourSum.Content = _playerFourSum + int.Parse(sender.Text);
-                    sender.Focusable = false;
-
-                    if (int.Parse(playerFourSum.Content.ToString()) >= _bonusThreshold)
-                    {
-                        playerFourBonus.Content = 50;
-                    }
-                }
-                else
-                {
-                    previousSum = int.Parse(playerFourSum.Content.ToString());
-                    playerFourSum.Content = previousSum + int.Parse(sender.Text);
-                    sender.Focusable = false;
-
-                    if (int.Parse(playerFourSum.Content.ToString()) >= _bonusThreshold)
-                    {
-                        playerFourBonus.Content = 50;
-                    }
-                }
-            }
-            else
-            {
-                MessageBox.Show("Somethings real wrong if you see this");
             }
         }
 
