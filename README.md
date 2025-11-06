@@ -11,3 +11,6 @@ the Yatzy project was quickly thrown together and not completely functional, the
 Clone the project and run in Visual Studio.
 Enter player names at the top of each column.
 Enter each player's score for each category in the box and press Enter to update.
+
+
+Lite mer text
