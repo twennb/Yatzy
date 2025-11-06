@@ -130,5 +130,25 @@
                Content="0"/>
         <Label Grid.Row="8" Grid.Column="4" x:Name="playerFourBonus"
            BorderBrush="DarkGray" BorderThickness="1"/>
+        <TextBlock Name="textBlockOne" Grid.Column="4" HorizontalAlignment="Left" Margin="209,83,0,0" Grid.Row="17" 
+                   TextWrapping="Wrap" VerticalAlignment="Top">
+            <Run Name="starRun" Foreground="Red"/>
+            <Run Name="messageRun" Foreground="Black"/>
+            
+            <!-- Animation -->
+            <TextBlock.Triggers>
+                <EventTrigger RoutedEvent="TextBox.Loaded">
+                    <BeginStoryboard>
+                        <Storyboard>
+                            <DoubleAnimation
+                                Storyboard.TargetName="textBlockOne"
+                                Storyboard.TargetProperty="(TextBlock.Opacity)"
+                                From="1.0" To=" 0.0" Duration="0:0:1"
+                                AutoReverse="True" RepeatBehavior="0:0:6"/>
+                        </Storyboard>
+                    </BeginStoryboard>
+                </EventTrigger>
+            </TextBlock.Triggers>
+        </TextBlock>
     </Grid>
 </Window>

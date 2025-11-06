@@ -28,11 +28,33 @@ namespace Alternate
         {
             InitializeComponent();
 
+            TextBoxChange();
         }
+
+        private void TextBoxChange()
+        {
+            starRun.Text = " *";
+            messageRun.Text = "You did it wrong";
+        }
+
+        private void TextBoxFadeOut(object sender, RoutedEvent e)
+        {
+            starRun.Text = " *";
+            messageRun.Text = "You did it wrong";
+        }
+
+        private void TextBoxFadeIn(object sender, RoutedEventArgs e)
+        {
+            starRun.Text = " *";
+            messageRun.Text = "You did it wrong";
+        }
+
+
 
         // Define the function that is called by the textbox events
         private void PlayerSumCalc(TextBox sender) // this function takes in a TextBox object, the box that called it
         { 
+
             if (sender.Text != "") // make sure the sender box isn't empty, if it is do nothing
             {
                 if (sender.Name.Contains("First")) // check if player 1 owns the box
@@ -41,6 +63,7 @@ namespace Alternate
                     playerOneSum.Content = previousSum + int.Parse(sender.Text); // new sum = old sum plus new value from sender
                     
                     sender.Focusable = false; // make non interactible 
+
 
                     if (int.Parse(playerOneSum.Content.ToString()) >= _bonusThreshold) // check if bonus is met
                     {
@@ -53,6 +76,7 @@ namespace Alternate
                     playerTwoSum.Content = previousSum + int.Parse(sender.Text);
 
                     sender.Focusable = false;
+
 
                     if (int.Parse(playerTwoSum.Content.ToString()) >= _bonusThreshold)
                     {
@@ -95,6 +119,14 @@ namespace Alternate
             if (e.Key == Key.Enter) // happens when the user presses Enter
             {
                 PlayerSumCalc((TextBox)sender); // runs the function to handle everything after user presses Enter in a box
+            }
+        }
+
+        private void test(object sender, KeyEventArgs e)
+        {
+            if (e.Key == Key.Enter)
+            {
+                MessageBox.Show("");
             }
         }
     }
