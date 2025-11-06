@@ -10,23 +10,21 @@ namespace Alternate
 {
     public class Player
     {
-        public Dictionary<string, string> PlayerCells = new Dictionary<string, string>();
+        public List<TextBox> PlayerCells = new List<TextBox>();
 
-        public int ScoreSum { get; set; }
-        public bool HasBonus { get; set; }
+        public string Name { get; set; }
 
-        public Player(string ones, string twos, string threes,
-            string fours, string fives, string sixes)
+        public Player(TextBox ones, TextBox twos, TextBox threes,
+            TextBox fours, TextBox fives, TextBox sixes, string name)
         {
-            PlayerCells.Add("ones", ones);
-            PlayerCells.Add("twos", twos);
-            PlayerCells.Add("threes", threes);
-            PlayerCells.Add("fours", fours);
-            PlayerCells.Add("fives", fives);
-            PlayerCells.Add("sixes", sixes);
+            PlayerCells.Add(ones);
+            PlayerCells.Add(twos);
+            PlayerCells.Add(threes);
+            PlayerCells.Add(fours);
+            PlayerCells.Add(fives);
+            PlayerCells.Add(sixes);
 
-            ScoreSum = 0;
-            HasBonus = false;
+            Name = name;
         }
     }
 }

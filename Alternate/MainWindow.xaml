@@ -70,13 +70,17 @@
 
         <!-- Spelares namn -->
         <TextBox Grid.Row="0" Grid.Column="1" MinWidth="45"
-             BorderBrush="Black" BorderThickness="1.5"/>
+             BorderBrush="Black" BorderThickness="1.5"
+                 x:Name="PlayerOneName"/>
         <TextBox Grid.Row="0" Grid.Column="2" MinWidth="45"
-             BorderBrush="Black" BorderThickness="1.5"/>
+             BorderBrush="Black" BorderThickness="1.5"
+                 x:Name="PlayerTwoName"/>
         <TextBox Grid.Row="0" Grid.Column="3" MinWidth="45"
-             BorderBrush="Black" BorderThickness="1.5"/>
+             BorderBrush="Black" BorderThickness="1.5"
+                 x:Name="PlayerThreeName"/>
         <TextBox Grid.Row="0" Grid.Column="4" MinWidth="45"
-             BorderBrush="Black" BorderThickness="1.5"/>
+             BorderBrush="Black" BorderThickness="1.5"
+                 x:Name="PlayerFourName"/>
 
         <!-- Spelare 1 -->
         <TextBox Grid.Row="1" Grid.Column="1" x:Name="FirstPlayerOnes" KeyDown="player_KeyDown"/>
@@ -86,7 +90,8 @@
         <TextBox Grid.Row="5" Grid.Column="1" x:Name="FirstPlayerFives" KeyDown="player_KeyDown"/>
         <TextBox Grid.Row="6" Grid.Column="1" x:Name="FirstPlayerSixes" KeyDown="player_KeyDown"/>
         <Label Grid.Row="7" Grid.Column="1" x:Name="playerOneSum"
-           BorderBrush="DarkGray" BorderThickness="1"/>
+           BorderBrush="DarkGray" BorderThickness="1"
+               Content="0"/>
         <Label Grid.Row="8" Grid.Column="1" x:Name="playerOneBonus"
            BorderBrush="DarkGray" BorderThickness="1"/>
         <!-- Spelare 2 -->
@@ -97,7 +102,8 @@
         <TextBox Grid.Row="5" Grid.Column="2" x:Name="SecondPlayerFives" KeyDown="player_KeyDown"/>
         <TextBox Grid.Row="6" Grid.Column="2" x:Name="SecondPlayerSixes" KeyDown="player_KeyDown"/>
         <Label Grid.Row="7" Grid.Column="2" x:Name="playerTwoSum"
-           BorderBrush="DarkGray" BorderThickness="1"/>
+           BorderBrush="DarkGray" BorderThickness="1"
+               Content="0"/>
         <Label Grid.Row="8" Grid.Column="2" x:Name="playerTwoBonus"
            BorderBrush="DarkGray" BorderThickness="1"/>
         <!-- Spelare 3 -->
@@ -108,7 +114,8 @@
         <TextBox Grid.Row="5" Grid.Column="3" x:Name="ThirdPlayerFives" KeyDown="player_KeyDown"/>
         <TextBox Grid.Row="6" Grid.Column="3" x:Name="ThirdPlayerSixes" KeyDown="player_KeyDown"/>
         <Label Grid.Row="7" Grid.Column="3" x:Name="playerThreeSum" 
-           BorderBrush="DarkGray" BorderThickness="1"/>
+           BorderBrush="DarkGray" BorderThickness="1"
+               Content="0"/>
         <Label Grid.Row="8" Grid.Column="3" x:Name="playerThreeBonus"
            BorderBrush="DarkGray" BorderThickness="1"/>
         <!-- Spelare 4 -->
@@ -119,7 +126,8 @@
         <TextBox Grid.Row="5" Grid.Column="4" x:Name="FourthPlayerFives" KeyDown="player_KeyDown"/>
         <TextBox Grid.Row="6" Grid.Column="4" x:Name="FourthPlayerSixes" KeyDown="player_KeyDown"/>
         <Label Grid.Row="7" Grid.Column="4" x:Name="playerFourSum"
-           BorderBrush="DarkGray" BorderThickness="1"/>
+           BorderBrush="DarkGray" BorderThickness="1"
+               Content="0"/>
         <Label Grid.Row="8" Grid.Column="4" x:Name="playerFourBonus"
            BorderBrush="DarkGray" BorderThickness="1"/>
     </Grid>
